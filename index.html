@@ -38,7 +38,7 @@
         
         .decoration-side { position: absolute; top: 50%; transform: translateY(-50%); width: 650px; height: 650px; background-image: url('trongdong-pattern.png'); background-size: contain; background-repeat: no-repeat; opacity: 0.5; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)); z-index: 0; pointer-events: none; }
         .decoration-left { left: -250px; } .decoration-right { right: -250px; transform: translateY(-50%) scaleX(-1); }
-        .section-title { color: var(--primary-gold); font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-bottom: 40px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); text-align: center; position: relative; z-index: 2; }
+        .section-title { color: var(--primary-gold); font-size: 2.5rem; text-transform: normal; font-weight: 900; margin-bottom: 40px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); text-align: center; position: relative; z-index: 2; }
         .selection-container { display: flex; gap: 30px; z-index: 2; flex-wrap: wrap; justify-content: center; margin-bottom: 80px; position: relative; }
         .card { width: 300px; height: 380px; background: rgba(255, 255, 255, 0.1); border: 3px solid var(--primary-gold); border-radius: 20px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.4); position: relative; }
         .card:hover { transform: translateY(-15px) scale(1.02); box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4); border-color: #fff; background: linear-gradient(45deg, rgba(255,215,0,0.2), rgba(206, 22, 16, 0.6)); }
@@ -132,7 +132,7 @@
         <div class="decoration-side decoration-left"></div>
         <div class="decoration-side decoration-right"></div>
 
-        <h2 class="section-title">Nội Dung</h2>
+        <h2 class="section-title">NỘI DUNG</h2>
         <div class="selection-container">
             <div class="card card-flipbook" onclick="openModal('modal-flipbook-main')">
                 <div class="card-icon"><img src="BIA DU THI BINH.jpg"></div>
@@ -152,7 +152,7 @@
             </div>
         </div>
 
-        <h2 class="section-title">Nhóm Tác Giả<br>nhấn để xem thông tin</h2>
+        <h2 class="section-title">NHÓM TÁC GIẢ<br>(Nhấn vào để xem)</h2>
 <div class="author-section">
     <div class="author-grid">
         
@@ -187,7 +187,7 @@
             <div class="author-img-box">
                 <img src="z7299959165936_ee881c9667fe5fb05a767a0c3c6f7615.jpg">
             </div>
-            <div class="author-name">thượng sĩ<br>Trần Đình Lộc</div>
+            <div class="author-name">Thượng sĩ<br>Trần Đình Lộc</div>
         </div>
         
         <div class="author-item" onclick="openAuthorInfo(
@@ -204,7 +204,7 @@
             <div class="author-img-box">
                 <img src="z7300301992378_c7606542635666ac93dc7b67d6e770aa.jpg">
             </div>
-            <div class="author-name">thượng sĩ<br>Đặng Lê Tuấn Anh</div>
+            <div class="author-name">Thượng sĩ<br>Đặng Lê Tuấn Anh</div>
         </div>
 
     </div>
@@ -289,4 +289,5 @@
     </script>
 </body>
 </html>
+
 
