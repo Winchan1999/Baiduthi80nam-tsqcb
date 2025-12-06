@@ -9,14 +9,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- CÀI ĐẶT CHUNG (Giữ nguyên) --- */
+        /* --- CÀI ĐẶT CHUNG --- */
         :root { --primary-red: #ce1610; --primary-gold: #ffd700; --text-dark: #333; --bg-paper: #f9f9f9; }
-        body, html { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; overflow-x: hidden; background-image: url('BIA DU THI BINH.jpg'); background-size: 100% auto; background-position: top center; background-repeat: no-repeat; background-color: var(--primary-red); }
+        
+        body, html { 
+            margin: 0; padding: 0; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; overflow-x: hidden; 
+            
+            /* CẤU HÌNH CHO MÁY TÍNH */
+            background-image: url('BIA DU THI BINH.jpg'); 
+            background-size: 100% auto; 
+            background-position: top center; 
+            background-repeat: no-repeat; 
+            background-color: var(--primary-red); 
+            /* Trên máy tính để ảnh trôi theo nội dung cho tự nhiên */
+            background-attachment: scroll; 
+        }
+
         .hero-section { height: 100vh; width: 100%; position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 60px; background: transparent; }
         .scroll-indicator { position: absolute; bottom: 30px; animation: bounce 2s infinite; cursor: pointer; z-index: 10; }
         .scroll-indicator span { display: block; width: 30px; height: 30px; border-bottom: 5px solid var(--primary-gold); border-right: 5px solid var(--primary-gold); transform: rotate(45deg); margin: -15px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-20px);} 60% {transform: translateY(-10px);} }
-        .main-content-wrapper { min-height: 100vh; padding: 60px 20px; position: relative; display: flex; flex-direction: column; align-items: center; background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%); }
+        
+        /* Chỉnh lại độ mờ nền một chút để dễ đọc chữ trên điện thoại */
+        .main-content-wrapper { 
+            min-height: 100vh; padding: 60px 20px; position: relative; display: flex; flex-direction: column; align-items: center; 
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.9) 100%); 
+        }
+        
         .decoration-side { position: absolute; top: 50%; transform: translateY(-50%); width: 650px; height: 650px; background-image: url('trongdong-pattern.png'); background-size: contain; background-repeat: no-repeat; opacity: 0.5; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)); z-index: 0; pointer-events: none; }
         .decoration-left { left: -250px; } .decoration-right { right: -250px; transform: translateY(-50%) scaleX(-1); }
         .section-title { color: var(--primary-gold); font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-bottom: 40px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); text-align: center; position: relative; z-index: 2; }
@@ -64,7 +83,6 @@
         .profile-name { font-size: 2.5rem; color: var(--primary-red); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
         .profile-role { font-size: 1.2rem; color: #666; font-weight: 500; margin-top: 5px; text-transform: uppercase; }
         
-        /* Grid thông tin liên hệ: Đã thêm chỗ cho SĐT và Email động */
         .profile-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
         .info-item { display: flex; align-items: center; font-size: 1rem; color: #444; }
         .info-item i { width: 30px; height: 30px; background: var(--text-dark); color: var(--primary-gold); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 0.9rem; flex-shrink: 0; }
@@ -73,7 +91,22 @@
         .section-header-text { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; color: #333; }
         .profile-bio-text { font-size: 1rem; line-height: 1.6; color: #555; text-align: justify; }
 
+        /* --- CẤU HÌNH RIÊNG CHO ĐIỆN THOẠI (FIX LỖI CẮT ẢNH) --- */
         @media (max-width: 768px) {
+            body, html {
+                /* 1. HIỆN FULL ẢNH: Chiều ngang 100%, Chiều cao tự động */
+                background-size: 100% auto !important; 
+                
+                /* 2. CĂN ẢNH: Bắt đầu từ đỉnh màn hình */
+                background-position: top center !important; 
+                
+                /* 3. GHIM ẢNH: Ảnh đứng yên, nội dung trôi lên */
+                background-attachment: fixed !important;
+                
+                /* 4. MÀU NỀN: Nếu ảnh ngắn, phần dưới sẽ là màu đỏ để tệp màu */
+                background-color: var(--primary-red);
+            }
+
             .profile-container { flex-direction: column; }
             .profile-left { width: 100%; padding: 30px; border-right: none; border-bottom: 5px solid var(--primary-gold); }
             .profile-img-frame { width: 60%; margin: 0 auto; padding-top: 80%; }
@@ -81,7 +114,6 @@
             .profile-name { font-size: 1.8rem; }
             .profile-info-grid { grid-template-columns: 1fr; gap: 15px; }
             
-            body, html { background-size: cover; background-position: center top; }
             .decoration-side { opacity: 0.3; width: 400px; height: 400px; } .decoration-left { left: -200px; } .decoration-right { right: -200px; }
             .section-title { font-size: 1.8rem; margin-bottom: 30px; }
             .card.card-flipbook { height: auto; padding: 20px 0; } .card.card-flipbook .card-icon { width: 120px; height: 160px; }
@@ -256,5 +288,4 @@
         }
     </script>
 </body>
-
 </html>
